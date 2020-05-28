@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1245</width>
-    <height>762</height>
+    <width>1240</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <x>40</x>
       <y>30</y>
       <width>1191</width>
-      <height>681</height>
+      <height>701</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -43,8 +43,8 @@
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">couleur:
-rgb(255, 255, 255)</string>
+       <string notr="true">background_color:rgb(198, 198, 198);
+couleur:rgb(255, 255, 255);</string>
       </property>
      </widget>
      <widget class="QLabel" name="IDequipe">
@@ -308,8 +308,8 @@ padding: 0 8px;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-color: white;
-background-color: red;
+color: rgb(0, 0, 0);
+background-color: rgb(228, 183, 255);
 border-width: 1px;
 border-color: #339;
 border-style: solid;
@@ -338,8 +338,10 @@ font-size: 20px;
       <property name="styleSheet">
        <string notr="true">border: 2px solid gray;
 border-radius: 10px;
-background-color: red;
-color : white;</string>
+background-color: rgb(228, 183, 255);
+color : rgb(0, 0, 0);
+
+</string>
       </property>
      </widget>
      <widget class="QLabel" name="IDequipe_2">
@@ -586,8 +588,8 @@ padding: 0 8px;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-color: white;
-background-color: red;
+color: rgb(0, 0, 0);
+background-color: rgb(228, 183, 255);
 border-width: 1px;
 border-color: #339;
 border-style: solid;
@@ -616,8 +618,10 @@ font-size: 20px;
       <property name="styleSheet">
        <string notr="true">border: 2px solid gray;
 border-radius: 10px;
-background-color: red;
-color : white;</string>
+background-color: rgb(228, 183, 255);
+color : rgb(0, 0, 0);
+
+</string>
       </property>
      </widget>
      <widget class="QLabel" name="IDequipe_3">
@@ -644,8 +648,8 @@ color : white;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-color: white;
-background-color: red;
+color: rgb(0, 0, 0);
+background-color: rgb(228, 183, 255);
 border-width: 1px;
 border-color: #339;
 border-style: solid;
@@ -673,8 +677,8 @@ font-size: 20px;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-color: white;
-background-color: red;
+color: rgb(0, 0, 0);
+background-color: rgb(228, 183, 255);
 border-width: 1px;
 border-color: #339;
 border-style: solid;
@@ -718,8 +722,10 @@ padding: 0 8px;</string>
       <property name="styleSheet">
        <string notr="true">border: 2px solid gray;
 border-radius: 10px;
-background-color: red;
-color : white;</string>
+background-color: rgb(228, 183, 255);
+color : rgb(0, 0, 0);
+
+</string>
       </property>
       <item>
        <property name="text">
@@ -749,8 +755,10 @@ color : white;</string>
       <property name="styleSheet">
        <string notr="true">border: 2px solid gray;
 border-radius: 10px;
-background-color: red;
-color : white;</string>
+background-color: rgb(228, 183, 255);
+color : rgb(0, 0, 0);
+
+</string>
       </property>
       <item>
        <property name="text">
@@ -778,11 +786,85 @@ color : white;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: blue;</string>
+       <string notr="true">background-color: rgb(204, 189, 179);</string>
       </property>
       <property name="title">
        <string/>
       </property>
+      <widget class="QGroupBox" name="groupBox_4">
+       <property name="geometry">
+        <rect>
+         <x>910</x>
+         <y>40</y>
+         <width>211</width>
+         <height>401</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 1px;
+border-color: #339;
+border-style: solid;
+border-radius:14;
+font-size: 20px;</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_6">
+       <property name="geometry">
+        <rect>
+         <x>920</x>
+         <y>460</y>
+         <width>211</width>
+         <height>101</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 5px;
+border-color: #339;
+border-style: solid;
+border-radius:14;
+font-size: 20px;</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_nom">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>130</y>
+         <width>171</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:red;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_id">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>90</y>
+         <width>171</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:red;
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </widget>
      <zorder>groupBox</zorder>
      <zorder>tabEquipe</zorder>
@@ -835,11 +917,15 @@ color : white;</string>
      <widget class="QTableView" name="tabMatch">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>260</x>
         <y>40</y>
-        <width>681</width>
-        <height>551</height>
+        <width>661</width>
+        <height>521</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background_color:rgb(198, 198, 198);
+couleur:rgb(255, 255, 255);</string>
       </property>
      </widget>
      <widget class="QLabel" name="id_match">
@@ -910,8 +996,10 @@ padding: 0 8px;</string>
       <property name="styleSheet">
        <string notr="true">border: 2px solid gray;
 border-radius: 10px;
-background-color: red;
-color : white;</string>
+background-color: rgb(228, 183, 255);
+color : rgb(0, 0, 0);
+
+</string>
       </property>
      </widget>
      <widget class="QLabel" name="Type">
@@ -939,8 +1027,10 @@ color : white;</string>
       <property name="styleSheet">
        <string notr="true">border: 2px solid gray;
 border-radius: 10px;
-background-color: red;
-color : white;</string>
+background-color: rgb(228, 183, 255);
+color : rgb(0, 0, 0);
+
+</string>
       </property>
       <item>
        <property name="text">
@@ -997,8 +1087,8 @@ padding: 0 8px;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-color: white;
-background-color: red;
+color: rgb(0, 0, 0);
+background-color: rgb(228, 183, 255);
 border-width: 1px;
 border-color: #339;
 border-style: solid;
@@ -1122,8 +1212,10 @@ padding: 0 8px;</string>
       <property name="styleSheet">
        <string notr="true">border: 2px solid gray;
 border-radius: 10px;
-background-color: red;
-color : white;</string>
+background-color: rgb(228, 183, 255);
+color : rgb(0, 0, 0);
+
+</string>
       </property>
      </widget>
      <widget class="QComboBox" name="comboBox_type_2">
@@ -1138,8 +1230,10 @@ color : white;</string>
       <property name="styleSheet">
        <string notr="true">border: 2px solid gray;
 border-radius: 10px;
-background-color: red;
-color : white;</string>
+background-color: rgb(228, 183, 255);
+color : rgb(0, 0, 0);
+
+</string>
       </property>
       <item>
        <property name="text">
@@ -1169,8 +1263,10 @@ color : white;</string>
       <property name="styleSheet">
        <string notr="true">border: 2px solid gray;
 border-radius: 10px;
-background-color: red;
-color : white;</string>
+background-color: rgb(228, 183, 255);
+color : rgb(0, 0, 0);
+
+</string>
       </property>
      </widget>
      <widget class="QPushButton" name="ModifierM">
@@ -1184,8 +1280,8 @@ color : white;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-color: white;
-background-color: red;
+color: rgb(0, 0, 0);
+background-color: rgb(228, 183, 255);
 border-width: 1px;
 border-color: #339;
 border-style: solid;
@@ -1214,8 +1310,10 @@ font-size: 20px;
       <property name="styleSheet">
        <string notr="true">border: 2px solid gray;
 border-radius: 10px;
-background-color: red;
-color : white;</string>
+background-color: rgb(228, 183, 255);
+color : rgb(0, 0, 0);
+
+</string>
       </property>
      </widget>
      <widget class="QLabel" name="id_match_3">
@@ -1242,8 +1340,8 @@ color : white;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-color: white;
-background-color: red;
+color: rgb(0, 0, 0);
+background-color: rgb(228, 183, 255);
 border-width: 1px;
 border-color: #339;
 border-style: solid;
@@ -1271,8 +1369,8 @@ font-size: 20px;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-color: white;
-background-color: red;
+color: rgb(0, 0, 0);
+background-color: rgb(228, 183, 255);
 border-width: 1px;
 border-color: #339;
 border-style: solid;
@@ -1295,7 +1393,7 @@ font-size: 20px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: blue;</string>
+       <string notr="true">background-color: rgb(204, 189, 179);</string>
       </property>
       <property name="title">
        <string/>
@@ -1313,6 +1411,28 @@ font-size: 20px;
         <string>Equipe</string>
        </property>
       </widget>
+      <widget class="QGroupBox" name="groupBox_7">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>40</y>
+         <width>241</width>
+         <height>281</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border-width: 5px;
+border-color: #339;
+border-style: solid;
+border-radius:14;
+font-size: 20px;</string>
+       </property>
+       <property name="title">
+        <string/>
+       </property>
+      </widget>
+      <zorder>groupBox_7</zorder>
+      <zorder>Equipe</zorder>
      </widget>
      <zorder>groupBox_2</zorder>
      <zorder>tabMatch</zorder>
@@ -1349,7 +1469,7 @@ font-size: 20px;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1245</width>
+     <width>1240</width>
      <height>26</height>
     </rect>
    </property>

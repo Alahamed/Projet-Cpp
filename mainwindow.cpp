@@ -1,24 +1,22 @@
-#include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "mainwindow.h"
 #include "equipe.h"
 #include "match.h"
 #include "son.h"
 #include "stat.h"
-#include <QMessageBox>
-#include <QDebug>
-#include <QPrinter>
-#include <QPainter>
+#include <QtWidgets/QMainWindow>
+#include <QtCharts/QPieSlice>
 #include <QtPrintSupport>
 #include <QPrintDialog>
-#include <QWidget>
-#include <QTableView>
 #include <QApplication>
-#include <QtWidgets/QMainWindow>
-#include <string>
+#include <QMessageBox>
+#include <QTableView>
 #include <QSqlQuery>
-#include <QtCharts/QPieSlice>
-
-
+#include <QPrinter>
+#include <QPainter>
+#include <QWidget>
+#include <QDebug>
+#include <string>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -28,11 +26,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tabEquipe->setModel(tmpequipe.afficher());
     ui->tabMatch->setModel(tmpmatch.afficher());
 }
-
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+/*-------Les équipes -------*/
+
 void MainWindow::on_tabWidget_tabBarClicked()
 {
     ui->comboBox_idM->setModel(tmpequipe.afficher_id());
@@ -55,23 +55,57 @@ void MainWindow::on_AjouterE_clicked()
     QString joueur5= ui->lineEdit_j5->text();
     QString joueur6= ui->lineEdit_j6->text();
 
-    equipe e(id,nom,joueur1,joueur2,joueur3,joueur4,joueur5,joueur6);
-        bool test=e.ajouter();
-        if(test)
-        { ui->tabEquipe->setModel(tmpequipe.afficher());//refresh
-          QMessageBox::information(nullptr, QObject::tr("Ajouter un equipe"),
-                              QObject::tr("equipe ajouté.\n"
-                                          "Click Cancel to exit."), QMessageBox::Cancel); }
-        else
-        {ui->tabEquipe->setModel(tmpequipe.afficher());//refresh
-         QMessageBox::critical(nullptr, QObject::tr("Ajouter un Equipe"),
-                             QObject::tr("Erreur !.\n"
-                                      "Click Cancel to exit."), QMessageBox::Cancel);}
+    #define std ;
+    QSqlQuery q;
+    int verif=0;
+    int i=0;
+     if(q.exec("select * from equipe1 WHERE ID='id' "))
+        {
+          int count= 0 ;
+          while(q.next())
+               { count++ ;}
+          if(count==0)
+               {verif=0; }
+          else
+               {verif=1;
+                 ui->label_id->setText("id déjà existe");}
+        }
+
+        else if((nom=="")or(joueur1=="")or(joueur2=="")or(joueur3=="")or(joueur4=="")or(joueur5=="")or(joueur6==""))
+          {  verif =1 ;
+             ui->label_nom->setText("champ vide");
+          }
+
+     for(i=0;i<nom.length();i++)
+        { if((nom.at(i)>='0')and(nom.at(i)<='9'))
+            { verif =1 ;
+              ui->label_nom->setText("contient des chiffres");
+              break;}
+        }
+
+
+            if(verif==0 && id < 200)
+              {
+                equipe e(id,nom,joueur1,joueur2,joueur3,joueur4,joueur5,joueur6);
+                       e.ajouter();
+
+                ui->tabEquipe->setModel(tmpequipe.afficher());//refresh
+                QMessageBox::information(nullptr, QObject::tr("Ajouter un equipe"),
+                                             QObject::tr("equipe ajouté.\n"
+                                                    "Click Cancel to exit."), QMessageBox::Cancel);}
+            else
+              {
+                ui->tabEquipe->setModel(tmpequipe.afficher());//refresh
+                 QMessageBox::critical(nullptr, QObject::tr("Ajouter un Equipe"),
+                                            QObject::tr("Erreur !.\n"
+                                                   "Click Cancel to exit."), QMessageBox::Cancel); }
 }
+
+
+
 
 void MainWindow::on_tabEquipe_activated(const QModelIndex &index)
 {
-
         QString val=ui->tabEquipe->model()->data(index).toString() ;
         QSqlQuery query ;
         QString radio="";
@@ -89,13 +123,11 @@ void MainWindow::on_tabEquipe_activated(const QModelIndex &index)
                  ui->lineEdit_j5_2->setText(query.value(6).toString());
                  ui->lineEdit_j6_2->setText(query.value(7).toString());
              }
-
      }
 }
 
 void MainWindow::on_ModifierE_clicked()
 {
-
         int id = ui->comboBox_idM->currentText().toInt();
         QString nom= ui->lineEdit_nomquipe_2->text();
         QString joueur1= ui->lineEdit_j1_2->text();
@@ -113,7 +145,6 @@ void MainWindow::on_ModifierE_clicked()
             QMessageBox::information(nullptr, QObject::tr("modifier un Equipe"),
                               QObject::tr("equipe modifié.\n"
                                           "Click Cancel to exit."), QMessageBox::Cancel);
-
         }
         else
             ui->tabEquipe->setModel(tmpequipe.afficher());//refresh
@@ -176,8 +207,6 @@ void MainWindow::on_Tri_currentIndexChanged(const QString &arg1)
         ui->tabEquipe->setModel(tmpequipe.trier_id2());
 }
 
-
-
 /*--------- Gestion du Match -----------------*/
 
 void MainWindow::on_AjouterM_clicked()
@@ -189,7 +218,7 @@ void MainWindow::on_AjouterM_clicked()
     QString typeACt   = ui->comboBox_type->currentText();
     int minuteAct     = ui->lineEdit_minute->text().toUInt();
     match m(idMatch,nomJoueur,equipeA,typeACt,minuteAct);
-    if(minuteAct<65){
+    if(minuteAct<65 && idMatch <500){
     bool test=m.ajouter();
     if(test)
     {
@@ -197,7 +226,6 @@ void MainWindow::on_AjouterM_clicked()
         QMessageBox::information(nullptr, QObject::tr("Ajouter un Match"),
                           QObject::tr("Match ajouté.\n"
                                       "Click Cancel to exit."), QMessageBox::Cancel);
-
     }
     else
     {
@@ -213,6 +241,26 @@ void MainWindow::on_AjouterM_clicked()
                                         "Click Cancel to exit."), QMessageBox::Cancel);
          }
 }
+
+void MainWindow::on_tabMatch_activated(const QModelIndex &index)
+{
+    QString val=ui->tabMatch->model()->data(index).toString() ;
+    QSqlQuery query ;
+    QString radio="";
+    query.prepare("select * from Match1 where ID_MATCH='"+val+"'") ;
+     if( query.exec())
+     {
+         while (query.next())
+         {
+             ui->comboBox_idM_mod->setCurrentText(query.value(0).toString());
+             ui->lineEdit_nomMatch_2->setText(query.value(1).toString());
+             ui->comboBox_equipe_2->setCurrentText(query.value(2).toString());
+             ui->comboBox_type_2->setCurrentText(query.value(3).toString());
+             ui->lineEdit_minute_2->setText(query.value(4).toString());
+         }
+    }
+}
+
 
 void MainWindow::on_ModifierM_clicked()
 {
@@ -321,21 +369,3 @@ void MainWindow::on_Statistique_clicked()
 
 
 
-void MainWindow::on_tabMatch_activated(const QModelIndex &index)
-{
-    QString val=ui->tabMatch->model()->data(index).toString() ;
-    QSqlQuery query ;
-    QString radio="";
-    query.prepare("select * from Match1 where ID_MATCH='"+val+"'") ;
-     if( query.exec())
-     {
-         while (query.next())
-         {
-             ui->comboBox_idM_mod->setCurrentText(query.value(0).toString());
-             ui->lineEdit_nomMatch_2->setText(query.value(1).toString());
-             ui->comboBox_equipe_2->setCurrentText(query.value(2).toString());
-             ui->comboBox_type_2->setCurrentText(query.value(3).toString());
-             ui->lineEdit_minute_2->setText(query.value(4).toString());
-         }
-    }
-}

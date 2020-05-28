@@ -40,16 +40,16 @@ private slots:
     /*--Match--*/
     void on_AjouterM_clicked();
 
+    void on_tabMatch_activated(const QModelIndex &index);
+
     void on_ModifierM_clicked();
 
     void on_SupprimerM_clicked();
-
 
     void on_Statistique_clicked();
 
 
 
-    void on_tabMatch_activated(const QModelIndex &index);
 
 private:
     Ui::MainWindow *ui;
