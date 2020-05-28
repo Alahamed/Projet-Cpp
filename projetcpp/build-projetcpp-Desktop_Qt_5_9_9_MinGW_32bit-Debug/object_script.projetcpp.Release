@@ -1,0 +1,13 @@
+INPUT(
+./release\cadeau.o
+./release\connexion.o
+./release\emplacement.o
+./release\gescadeau.o
+./release\gesempl.o
+./release\main.o
+./release\mainwindow.o
+./release\qrc_images.o
+./release\moc_gescadeau.o
+./release\moc_gesempl.o
+./release\moc_mainwindow.o
+);
