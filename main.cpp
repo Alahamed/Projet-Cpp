@@ -1,27 +1,37 @@
 #include "mainwindow.h"
 #include <QApplication>
+#include <QtSql>
+#include <iostream>
+#include <QDebug>
+#include <QtSql/QSql>
+#include <QtSql/QSqlQuery>
+#include "connexion.h"
+#include "gesempl.h"
+#include <QApplication>
 #include <QMessageBox>
-#include "connection.h"
+
+#define q2c(string) string.toStdString()
+
 int main(int argc, char *argv[])
 {
-
-    connection c;
-    bool test=c.ouvrirconnect();
     QApplication a(argc, argv);
     MainWindow w;
-    if(test)
-    {w.show();
-        QMessageBox::critical(nullptr, QObject::tr("database is open"),
-                    QObject::tr("connection successful.\n"
-                                "Click Cancel to exit."), QMessageBox::Cancel);
 
-}
-    else
-        QMessageBox::critical(nullptr, QObject::tr("database is not open"),
-                    QObject::tr("connection failed.\n"
-                                "Click Cancel to exit."), QMessageBox::Cancel);
+    Connexion c ;
+    bool test=c.ouvrirConnexion();
+      if(test)
+        {w.show();
+            QMessageBox::information(nullptr, QObject::tr("database is open"),
+                        QObject::tr("connection successful.\n"
+                                    "Click Cancel to exit."), QMessageBox::Cancel);
+
+        }
+        else
+            QMessageBox::critical(nullptr, QObject::tr("database is not open"),
+                        QObject::tr("connection failed.\n"
+                                    "Click Cancel to exit."), QMessageBox::Cancel);
 
 
 
-    return a.exec();
-}
+        return a.exec();
+    }

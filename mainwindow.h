@@ -1,11 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include"equipe.h"
-#include"match.h"
+#include "cadeau.h"
 #include <QMainWindow>
-#include "statistique.h"
-#include <QVBoxLayout>
-#include "stat.h"
+#include <QMediaPlayer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,44 +16,31 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void on_pause_clicked();
 private slots:
-    void on_tabWidget_tabBarClicked();
-    /*--Equipe--*/
+    void on_pushButton_2_clicked();
 
-    void on_AjouterE_clicked();
+    void on_Ajoutercadeau_clicked();
 
-    void on_tabEquipe_activated(const QModelIndex &index);
+    void on_modifier_match_clicked();
 
-    void on_ModifierE_clicked();
+    void on_modifier_cadeau_clicked();
 
-    void on_Supprimer_clicked();
+    void on_supprimer_match_clicked();
 
-    void on_Imprimer_clicked();
+    void on_supprimer_cadeau_clicked();
 
-    void on_recherche_currentIndexChanged(const QString &arg1);
+    void on_play_clicked();
 
-    void on_Tri_currentIndexChanged(const QString &arg1);
+    void on_commandLinkButton_3_clicked();
 
-    /*--Match--*/
-    void on_AjouterM_clicked();
-
-    void on_tabMatch_activated(const QModelIndex &index);
-
-    void on_ModifierM_clicked();
-
-    void on_SupprimerM_clicked();
-
-    void on_Statistique_clicked();
-
-
-
+    void on_commandLinkButton_4_clicked();
 
 private:
     Ui::MainWindow *ui;
-    equipe tmpequipe;
-    match  tmpmatch;
-    QVBoxLayout * mainLayout;
-    Stat *S;
+    cadeau tmpcadeau;
+      QMediaPlayer *player;
+      QTimer *delay;
 
 };
 #endif // MAINWINDOW_H
