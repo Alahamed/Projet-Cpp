@@ -13,6 +13,21 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton
+{
+text-align:center;
+font-size:20px;
+font-family: Impact;
+  color: white;
+  background-color: black;
+  border-width: 0px;
+  border-radius:10px;
+}
+QPushButton:hover { background-color: white;
+color:black;
+text-decoration: underline; }</string>
+  </property>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
@@ -23,7 +38,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Planification Tournois</string>
+    <string>3.Tournaments</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -62,13 +77,41 @@
     </rect>
    </property>
    <property name="text">
-    <string>Gesstion evenement</string>
+    <string>4.Events</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>50</y>
+     <width>221</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>2.Donations</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>50</y>
+     <width>221</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>1.News</string>
    </property>
   </widget>
   <zorder>label</zorder>
   <zorder>pushButton</zorder>
   <zorder>line</zorder>
   <zorder>pushButton_2</zorder>
+  <zorder>pushButton_3</zorder>
+  <zorder>pushButton_4</zorder>
  </widget>
  <resources/>
  <connections/>

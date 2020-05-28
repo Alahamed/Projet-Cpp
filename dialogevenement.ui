@@ -13,6 +13,34 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QLineEdit{border-radius: 8px; 
+border: 2px solid gray;
+
+padding: 0 8px;
+background: white; }
+
+
+
+QPushButton
+{
+color: gray;
+font-weight: bold;
+background-color: black;
+border-width: 1px;
+border-color: #339;
+border-style: solid;
+border-radius: 7;
+padding: 3px;
+font-size: 10px;
+padding-left: 5px;
+padding-right: 5px;
+
+}
+QPushButton:hover { background-color: white;
+color:black;
+ text-decoration: underline; }</string>
+  </property>
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
@@ -45,7 +73,7 @@
       <enum>QTabWidget::Triangular</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab_7">
       <attribute name="title">
@@ -78,7 +106,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../../Desktop/green-button-png-6.png</normaloff>../../Desktop/green-button-png-6.png</iconset>
+         <normaloff>../green-button-png-6.png</normaloff>../green-button-png-6.png</iconset>
        </property>
       </widget>
       <widget class="QLabel" name="label_24">
@@ -238,7 +266,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../../Desktop/small-button-clip-art-clkerm-vector-clip-art-37.png</normaloff>../../Desktop/small-button-clip-art-clkerm-vector-clip-art-37.png</iconset>
+         <normaloff>../small-button-clip-art-clkerm-vector-clip-art-37.png</normaloff>../small-button-clip-art-clkerm-vector-clip-art-37.png</iconset>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton_4">
@@ -371,7 +399,7 @@
        <property name="geometry">
         <rect>
          <x>470</x>
-         <y>360</y>
+         <y>340</y>
          <width>75</width>
          <height>23</height>
         </rect>
@@ -381,7 +409,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../../Desktop/green-button-png-6.png</normaloff>../../Desktop/green-button-png-6.png</iconset>
+         <normaloff>../green-button-png-6.png</normaloff>../green-button-png-6.png</iconset>
        </property>
       </widget>
       <widget class="QLabel" name="label_33">
@@ -454,7 +482,7 @@
        <property name="geometry">
         <rect>
          <x>470</x>
-         <y>320</y>
+         <y>310</y>
          <width>75</width>
          <height>23</height>
         </rect>
@@ -464,7 +492,20 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../../Desktop/rectangle-button-icon-png-6.png</normaloff>../../Desktop/rectangle-button-icon-png-6.png</iconset>
+         <normaloff>../rectangle-button-icon-png-6.png</normaloff>../rectangle-button-icon-png-6.png</iconset>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_8">
+       <property name="geometry">
+        <rect>
+         <x>470</x>
+         <y>370</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Back</string>
        </property>
       </widget>
      </widget>
@@ -487,7 +528,7 @@
       <enum>QTabWidget::Triangular</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
@@ -553,7 +594,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../../Desktop/green-button-png-6.png</normaloff>../../Desktop/green-button-png-6.png</iconset>
+         <normaloff>../green-button-png-6.png</normaloff>../green-button-png-6.png</iconset>
        </property>
       </widget>
       <widget class="QLabel" name="label_11">
@@ -690,7 +731,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../../Desktop/small-button-clip-art-clkerm-vector-clip-art-37.png</normaloff>../../Desktop/small-button-clip-art-clkerm-vector-clip-art-37.png</iconset>
+         <normaloff>../small-button-clip-art-clkerm-vector-clip-art-37.png</normaloff>../small-button-clip-art-clkerm-vector-clip-art-37.png</iconset>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton_3">
@@ -751,7 +792,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../../Desktop/rectangle-button-icon-png-6.png</normaloff>../../Desktop/rectangle-button-icon-png-6.png</iconset>
+         <normaloff>../rectangle-button-icon-png-6.png</normaloff>../rectangle-button-icon-png-6.png</iconset>
        </property>
       </widget>
       <widget class="QLabel" name="label_16">
@@ -916,7 +957,7 @@
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>../../Desktop/green-button-png-6.png</normaloff>../../Desktop/green-button-png-6.png</iconset>
+         <normaloff>../green-button-png-6.png</normaloff>../green-button-png-6.png</iconset>
        </property>
       </widget>
       <widget class="QLineEdit" name="moddate2">

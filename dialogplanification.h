@@ -47,6 +47,10 @@ private slots:
 
     void on_pushButton_9_clicked();
 
+    void on_pushButton_clicked();
+
+    void on_Recherchid_cursorPositionChanged(int arg1, int arg2);
+
 private:
     Ui::Dialogplanification *ui;
     match_amical tmpmatch;

@@ -2,7 +2,8 @@
 #include "ui_dialogevenement.h"
 #include <QMessageBox>
 #include <QPixmap>
-#include "dialogmenu.h"
+
+
 Dialogevenement::Dialogevenement(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialogevenement)
@@ -301,11 +302,4 @@ QMessageBox::information(nullptr, QObject::tr("Modifier un entrainement"),
                   QObject::tr("Erreur !.\n"
                               "Click Cancel to exit."), QMessageBox::Cancel);
 
-}
-
-void Dialogevenement::on_pushButton_8_clicked()
-{
-    this->hide();
-    Dialogmenu d;
-    d.exec();
 }

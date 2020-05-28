@@ -39,11 +39,11 @@ QSqlQueryModel * entrainement::afficher()
 
 model->setQuery("select * from entrainement order by ID");
 
-model->setHeaderData(0, Qt::Horizontal, QObject::tr("id "));
-model->setHeaderData(1, Qt::Horizontal, QObject::tr("date_entrainement"));
-model->setHeaderData(2, Qt::Horizontal, QObject::tr("lieu "));
-model->setHeaderData(3, Qt::Horizontal, QObject::tr("heure_debut"));
-model->setHeaderData(4, Qt::Horizontal, QObject::tr("heure_fin "));
+model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID "));
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("LIEU"));
+model->setHeaderData(2, Qt::Horizontal, QObject::tr("Date"));
+model->setHeaderData(3, Qt::Horizontal, QObject::tr("Debut"));
+model->setHeaderData(4, Qt::Horizontal, QObject::tr("Fin "));
 
     return model;
 }
@@ -54,11 +54,11 @@ QSqlQueryModel * entrainement::afficher2()
 model->setQuery("select * from entrainement order by ID desc");
 
 
-model->setHeaderData(0, Qt::Horizontal, QObject::tr("id "));
-model->setHeaderData(1, Qt::Horizontal, QObject::tr("date_entrainement"));
-model->setHeaderData(2, Qt::Horizontal, QObject::tr("lieu "));
-model->setHeaderData(3, Qt::Horizontal, QObject::tr("heure_debut"));
-model->setHeaderData(4, Qt::Horizontal, QObject::tr("heure_fin "));
+model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID "));
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("LIEU"));
+model->setHeaderData(2, Qt::Horizontal, QObject::tr("Date"));
+model->setHeaderData(3, Qt::Horizontal, QObject::tr("Debut"));
+model->setHeaderData(4, Qt::Horizontal, QObject::tr("Fin "));
 
     return model;
 }

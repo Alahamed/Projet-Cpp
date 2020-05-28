@@ -1,52 +1,78 @@
+
+
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "gescadeau.h"
-#include "ui_gescadeau.h"
-#include "gesempl.h"
-#include "ui_gesempl.h"
+#include <QSqlDatabase>
 #include <QMessageBox>
-#include <QMediaPlayer>
+#include <QSqlQuery>
+#include <QDialog>
+#include <QtSql>
+#include <QtDebug>
+#include <QSqlError>
+#include <QSqlQuery>
+#include "dialogmenu.h"
+#include "dialogaccount.h"
+#include <QLabel>
+#include <QPixmap>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+
+
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
+  ui->setupUi(this);
+    MainWindow::setWindowTitle("LOGIN");
+    QPixmap pix("C:/Users/ZAHER/Desktop/projet2020/truc.png");
+     ui->label_4->setPixmap(pix);
 
 }
 
 MainWindow::~MainWindow()
 {
-    delete ui;
+
+
 }
 
 
 
 
-void MainWindow::on_play_clicked()
+void MainWindow::on_pushButton_clicked()
 {
-    player = new QMediaPlayer(this);
-    player->setMedia(QUrl::fromLocalFile("C:/Qt/projetcpp/img/appmusic.mp3"));
-    player->play();
+    QString username=ui->lineEdit->text();
+       QString password= ui->lineEdit_2->text();
+       QSqlQuery query;
+           query.prepare("SELECT * FROM LOGIN WHERE USERNAME= ? AND PASSWORD= ?");
+           query.addBindValue(username);
+           query.addBindValue(password);
+            query.exec();
+              if(query.next())
+              {
+                   this->hide();
+                  Dialogmenu d;
+
+                  d.exec();
+
+
+
+
+                  }
+                    else
+                        QMessageBox::critical(nullptr, QObject::tr("LOGIN"),
+                                    QObject::tr("\nUser Name or Password is incorrect try again !\n"), QMessageBox::Cancel);
+
+              ui->lineEdit->clear();
+              ui->lineEdit_2->clear();
+
+
 }
 
-void MainWindow::on_pause_clicked()
+void MainWindow::on_commandLinkButton_clicked()
 {
-    player->pause();
-}
+    Dialogaccount d;
 
-void MainWindow::on_commandLinkButton_3_clicked()
-{
-    gescadeau gs;
-    gs.setModal(true);
-    gs.exec();
+    d.exec();
 }
 
 
-
-void MainWindow::on_commandLinkButton_4_clicked()
-{
-    gesempl gs;
-    gs.setModal(true);
-    gs.exec();
-}

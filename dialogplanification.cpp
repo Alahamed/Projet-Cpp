@@ -2,16 +2,14 @@
 #include "ui_dialogplanification.h"
 #include <QMessageBox>
 #include <QPixmap>
-#include <QDateTime>
-
-
+#include "dialogmenu.h"
 Dialogplanification::Dialogplanification(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialogplanification)
 {
     ui->setupUi(this);
-    QPixmap pix("C:/Users/the cast/Desktop/y.jpg");
 
+    QPixmap pix("C:/Users/DERBALI/Desktop/bck");
 
     ui->label_a1->setPixmap(pix);
     ui->label_a2->setPixmap(pix);
@@ -35,19 +33,12 @@ Dialogplanification::~Dialogplanification()
 void Dialogplanification::on_pb_ajouter_3_clicked()
 {
 
-    QDate date = QDate::currentDate();
-    QDate dates= ui->dateEdit_5->date();
-    QTime hd= ui->timeEdit_12->time();
-    QTime hf= ui->timeEdit_13->time();
-
-
     int id = ui->lineEdit_id->text().toInt();
     QString lieu= ui->lineEdit_lieu->text();
     QString date_match= ui->dateEdit_5->text();
     QString hdebut= ui->timeEdit_12->text();
     QString hfin= ui->timeEdit_13->text();
-    if((date<dates)&&(hd<hf))
-    {
+
 
   match_amical e(id,lieu,date_match,hdebut,hfin);
   bool test=e.ajouter();
@@ -61,7 +52,6 @@ QMessageBox::information(nullptr, QObject::tr("Ajouter match amical"),
                               "Click Cancel to exit."), QMessageBox::Cancel);
 
 }
-    }
   else
       QMessageBox::critical(nullptr, QObject::tr("Ajouter match amical"),
                   QObject::tr("Erreur !.\n"
@@ -180,22 +170,12 @@ void Dialogplanification::on_pushButton_4_clicked()
 
 void Dialogplanification::on_pb_ajouter_5_clicked()
 {
-
-    QDate date = QDate::currentDate();
-    QDate dates= ui->dateEdit_7->date();
-    QDate datess= ui->dateEdit_2->date();
-
-
-
     int id = ui->lineEditid->text().toInt();
     int nbr = ui->spinBox_2->text().toInt();
     QString lieu= ui->lineEdit_lieu_2->text();
     QString date_debut= ui->dateEdit_7->text();
     QString date_fin= ui->dateEdit_2->text();
 
-
-    if((date<dates)&&(dates<datess)&&(nbr>1))
-    {
 
   tournois e(id,nbr,lieu,date_debut,date_fin);
   bool test=e.ajouter();
@@ -207,7 +187,7 @@ void Dialogplanification::on_pb_ajouter_5_clicked()
 QMessageBox::information(nullptr, QObject::tr("Ajouter tournois"),
                   QObject::tr("match amical ajouté.\n"
                               "Click Cancel to exit."), QMessageBox::Cancel);
-  }
+
 }
   else
       QMessageBox::critical(nullptr, QObject::tr("Ajouter tournois"),
@@ -324,4 +304,11 @@ void Dialogplanification::on_pushButton_9_clicked()
 {
     ui->tabmatch2->setModel(tmmatch.afficher2());
 
+}
+
+void Dialogplanification::on_pushButton_clicked()
+{
+    this->hide();
+    Dialogmenu d;
+    d.exec();
 }

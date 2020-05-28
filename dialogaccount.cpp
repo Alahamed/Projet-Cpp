@@ -1,21 +1,13 @@
 #include "dialogaccount.h"
 #include "ui_dialogaccount.h"
 #include <QMessageBox>
-#include <QPixmap>
 
-
+#include "dialogmenu.h"
 Dialogaccount::Dialogaccount(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialogaccount)
 {
-
-  ui->setupUi(this);
-  ui->setupUi(this);
-
-QPixmap pix("C:/Users/the cast/Desktop/lst.jpg");
-
-
-ui->label->setPixmap(pix);
+    ui->setupUi(this);
 }
 
 Dialogaccount::~Dialogaccount()
