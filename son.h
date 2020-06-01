@@ -1,11 +1,8 @@
 #ifndef SON_H
 #define SON_H
 
+#include <QMediaPlayer>
 
-class Son
-{
-public:
-    Son();
-};
+void mettreMusique();
 
 #endif // SON_H

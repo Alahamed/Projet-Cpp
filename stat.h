@@ -2,7 +2,10 @@
 #define STAT_H
 
 #include <QMainWindow>
-
+#include <QtCharts>
+#include <QPieSeries>
+#include <QPieSlice>
+#include <QBarSeries>
 #include <QSqlQuery>
 #include <QString>
 #include <QDebug>
