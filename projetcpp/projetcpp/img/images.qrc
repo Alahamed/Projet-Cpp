@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>acceuil.png</file>
+        <file>acceuilpr.png</file>
+        <file>ajout.png</file>
+        <file>back.png</file>
+        <file>cherchbtn.png</file>
+        <file>cherchbtnpr.png</file>
+        <file>exit.png</file>
+        <file>exit1.png</file>
+        <file>modifbtn.png</file>
+        <file>print.png</file>
+        <file>reload.png</file>
+        <file>suppbtn.png</file>
+        <file>images.qrc</file>
+        <file>man.png</file>
+        <file>backk.jpg</file>
+        <file>triup.png</file>
+    </qresource>
+</RCC>

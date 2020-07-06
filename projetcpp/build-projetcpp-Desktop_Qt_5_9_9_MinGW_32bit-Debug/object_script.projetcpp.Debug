@@ -1,0 +1,13 @@
+INPUT(
+./debug\cadeau.o
+./debug\connexion.o
+./debug\emplacement.o
+./debug\gescadeau.o
+./debug\gesempl.o
+./debug\main.o
+./debug\mainwindow.o
+./debug\qrc_images.o
+./debug\moc_gescadeau.o
+./debug\moc_gesempl.o
+./debug\moc_mainwindow.o
+);
